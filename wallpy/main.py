@@ -1,6 +1,3 @@
-import requests
-import wget
-
 from wallpy.wallpaper import set_wallpaper
 from wallpy.apod_downloader import download_apod
 

@@ -1,11 +1,7 @@
-from enum import Enum, auto
-
 import requests
 import wget
 
-class FILE_TYPE(Enum):
-    IMAGE = auto()
-    VIDEO = auto()
+from wallpy.types import FILE_TYPE
 
 
 def download_apod(out_file) -> None:
