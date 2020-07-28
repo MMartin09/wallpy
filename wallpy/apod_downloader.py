@@ -28,7 +28,7 @@ def query_apod() -> dict:
 
     """
 
-    r = requests.get('https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY')
+    r = requests.get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
 
     return r.json()
 

@@ -11,5 +11,5 @@ def main():
     download_apod("test.jpg")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
