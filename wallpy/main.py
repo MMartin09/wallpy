@@ -1,14 +1,19 @@
-from wallpy.wallpaper import set_wallpaper
+import click
+
+# from wallpy.wallpaper import set_wallpaper
 from wallpy.apod_downloader import download_apod
 
+CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
-def main():
-    # wallpaper_file_1: str = "images/breno-machado-in9-n0JwgZ0-unsplash.jpg"
-    # wallpaper_file_2: str = "images/jonatan-pie-3l3RwQdHRHg-unsplash.jpg"
 
-    # set_wallpaper(wallpaper_file_2)
+@click.command(context_settings=CONTEXT_SETTINGS)
+@click.option("--apod", "-a", show_default=True, is_flag=True)
+def main(apod):
 
-    download_apod("test.jpg")
+    if apod:
+        download_apod("test.jpg")
+
+    click.echo("Welcome to wallpy!")
 
 
 if __name__ == "__main__":

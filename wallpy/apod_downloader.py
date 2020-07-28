@@ -1,7 +1,7 @@
 import requests
 import wget
 
-from wallpy.types import FILE_TYPE
+from wallpy.file_types import FILE_TYPE
 
 
 def download_apod(out_file) -> None:
