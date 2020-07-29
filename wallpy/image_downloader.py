@@ -1,17 +1,17 @@
-class ImageDownloader:
+class UrlQuery:
     def __init__(self):
         pass
 
-    def download(self, target):
+    def query(self, target):
         if target == "apod":
-            self._download_apod()
+            self._query_apod()
         elif target == "bing":
-            self._download_bing()
+            self._query_bing()
         else:
             raise ValueError(target)
 
-    def _download_apod(self):
+    def _query_apod(self):
         pass
 
-    def _download_bing(self):
+    def _query_bing(self):
         pass
