@@ -4,6 +4,17 @@ import wget
 from wallpy.file_types import FILE_TYPE
 
 
+def download_bing(out_file) -> None:
+    r = requests.get(
+        "https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=en-US"
+    )
+
+    url = "https://www.bing.com/" + r.json()["images"][0]["url"]
+    print(url)
+
+    wget.download(url, out=out_file)
+
+
 def download_apod(out_file) -> None:
     """Download the APOD from NASA.
 
