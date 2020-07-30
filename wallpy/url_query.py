@@ -9,9 +9,9 @@ class UrlQuery:
 
     def query(self, target):
         if target == "apod":
-            self._query_apod()
+            return self._query_apod()
         elif target == "bing":
-            self._query_bing()
+            return self._query_bing()
         else:
             raise ValueError(target)
 
