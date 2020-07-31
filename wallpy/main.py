@@ -17,10 +17,10 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     "-a",
     "apod",
     is_flag=True,
-    help="Download the Astronomy Picture of the Day (APoD",
+    help="Download the Astronomy Picture of the Day (APoD)",
 )
 @click.option(
-    "--bing", "-b", "bing", is_flag=True, help="Download the Bing imgae of the day"
+    "--bing", "-b", "bing", is_flag=True, help="Download the Bing image of the day"
 )
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
 def main(apod, bing, file):
