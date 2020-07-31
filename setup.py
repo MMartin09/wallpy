@@ -8,7 +8,7 @@ with open("readme.md", "r") as fp:
 setup(
     author="Moser Martin",
     author_email="mosermartin09@gmail.com",
-    description="Python wallpaper",
+    description="A simple wallpaper app",
     entry_points={"console_scripts": ["wallpy=wallpy.main:main"]},
     license="MIT",
     long_description=LONG_DESCRIPTION,
