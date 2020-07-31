@@ -7,7 +7,7 @@
 Usage: wallpy [OPTIONS]
 
 Options:
-  -a, --apod       Download the Astronomy Picture of the Day (APoD
+  -a, --apod       Download the Astronomy Picture of the Day (APoD)
   -b, --bing       Download the Bing imgae of the day
   -f, --file TEXT  Use the file as wallpaper
   -h, --help       Show this message and exit.
