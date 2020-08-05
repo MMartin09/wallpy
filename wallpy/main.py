@@ -1,8 +1,10 @@
 import tempfile
 import os
+import sys
 import time
 
 import click
+from urllib.error import URLError
 
 from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
@@ -29,14 +31,20 @@ def main(apod, bing, file):
     if file is None:
         fp = tempfile.TemporaryDirectory()
         file = os.path.join(fp.name, "wallpaper.jpg")
+        url = ""
 
         if apod:
             url = UrlQuery().query("apod")
-            ImageDownload().download(url, file)
 
         elif bing:
             url = UrlQuery().query("bing")
+
+        try:
             ImageDownload().download(url, file)
+        except URLError:
+            click.echo("Could not download the image! The url was invalid")
+            sys.exit(1)
+
 
     set_wallpaper(file)
 
