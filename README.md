@@ -1,6 +1,6 @@
 # Wallpy
 
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/MMartin09/wallpy?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/MMartin09/wallpy?include_prereleases&style=for-the-badge)
 [![GitHub license](https://img.shields.io/github/license/MMartin09/wallpy?style=for-the-badge)](https://github.com/MMartin09/wallpy/blob/development/LICENSE)
 [![style black](https://img.shields.io/badge/Style-Black-black.svg?style=for-the-badge)](https://github.com/ambv/black)
 
