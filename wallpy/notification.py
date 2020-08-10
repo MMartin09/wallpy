@@ -6,29 +6,16 @@ import System.Windows.Forms as WinForms  # noqa: F401, E402
 from System.Drawing import SystemIcons   # noqa: F401
 
 
-class Notification:
+def notificate(title, text, type = "exclamation"):
+    toast = WinForms.NotifyIcon()
 
-    _toast = WinForms.NotifyIcon
+    if type == "exclamation":
+        toast.Icon = SystemIcons.Exclamation
+    else:
+        raise ValueError(type)
 
-    def __init__(self, title, text, type = "exclamation"):
-        self._toast = WinForms.NotifyIcon()
+    toast.BalloonTipTitle = title
+    toast.BalloonTipText = text
 
-        if type == "exclamation":
-            self._toast.Icon = SystemIcons.Exclamation
-        else:
-            raise ValueError(type)
-
-        self._toast.BallonTipTitle = title
-        self._toast.BalloonTipText = text
-
-    def show_notification(self):
-        self._toast.Visible = True
-        self._toast.ShowBalloonTip(3000)
-
-
-def main():
-    Notification("Wally", "Downloaded the new image of the day from Bing").show_notification()
-
-
-if __name__ == '__main__':
-    main()
+    toast.Visible = True
+    toast.ShowBalloonTip(3000)
