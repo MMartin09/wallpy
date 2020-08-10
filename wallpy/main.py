@@ -25,7 +25,8 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     "--bing", "-b", "bing", is_flag=True, help="Download the Bing image of the day"
 )
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
-def main(apod, bing, file):
+@click.option("--script", "-s" "script", is_flag=True, hidden=True)
+def main(apod, bing, file, script):
     click.echo("Welcome to wallpy!")
 
     if file is None:
