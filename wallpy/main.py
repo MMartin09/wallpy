@@ -9,6 +9,7 @@ from urllib.error import URLError
 from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
 from wallpy.wallpaper import set_wallpaper
+from wallpy.notification import Notification
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -54,6 +55,16 @@ def main(apod, bing, file, script):
     # TODO:
     #      * Maybe this changes when this is not the end of the code
     time.sleep(0.5)
+
+    if script:
+        msg: str = ""
+
+        if apod:
+            msg = "Downloaded the new APOD from NASA"
+        elif bing:
+            msg = "Downloaded the new Image of the day from Bing"
+
+        Notification(title="Wally", text=msg).show_notification()
 
 
 if __name__ == "__main__":

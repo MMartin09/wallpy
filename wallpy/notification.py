@@ -12,13 +12,14 @@ class Notification:
 
     def __init__(self, title, text, type = "exclamation"):
         self._toast = WinForms.NotifyIcon()
-        self._toast.BallonTipTitle = title
-        self._toast.BalloonTipText = text
 
         if type == "exclamation":
             self._toast.Icon = SystemIcons.Exclamation
         else:
             raise ValueError(type)
+
+        self._toast.BallonTipTitle = title
+        self._toast.BalloonTipText = text
 
     def show_notification(self):
         self._toast.Visible = True
