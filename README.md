@@ -3,6 +3,7 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/MMartin09/wallpy?include_prereleases)
 [![GitHub license](https://img.shields.io/github/license/MMartin09/wallpy)](https://github.com/MMartin09/wallpy/blob/development/LICENSE)
 [![style black](https://img.shields.io/badge/Style-Black-black.svg)](https://github.com/ambv/black)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mmartin09/wallpy/coverage)
 [![codecov](https://codecov.io/gh/MMartin09/wallpy/branch/master/graph/badge.svg)](https://codecov.io/gh/MMartin09/wallpy)
 
 Wallpy is a simple cli application to change your desktop wallpaper. 
