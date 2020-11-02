@@ -31,6 +31,15 @@ Options:
   -h, --help       Show this message and exit.
 ```
 
+## Executable
+
+Wallpy could also be used without installation. The `bin` directory contains the pre-compiled `.exe` file. 
+It requires no installation and no Python. The usage is the same as described in the section 'Usage'. 
+The only difference is, that the application must be called with `wallpy.exe`. 
+
+The `bin`folder contains two batch files. `wallpy-apod` sets the APoD and `wallpy-bing` the bing image. 
+They could by executed with a double click on it. 
+
 ## Contributions
 
 For the code to be merged, each new code must be formatted with [black](https://black.readthedocs.io) for consistency with the rest of the code. 
