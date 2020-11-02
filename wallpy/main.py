@@ -64,9 +64,9 @@ def main(apod, bing, file, script):
         msg: str = ""
 
         if apod:
-            msg = "Downloaded the new APOD from NASA"
+            msg = "Set the new APOD from NASA as wallpaper"
         elif bing:
-            msg = "Downloaded the new Image of the day from Bing"
+            msg = "Set the new Image of the day from Bing as wallpaper"
 
         notificate(title="Wallpy", text=msg)
 
