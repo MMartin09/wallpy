@@ -1,0 +1,4 @@
+click==7.1.2
+requests==2.24.0
+wget==3.2
+pythonnet==2.5.1
