@@ -10,6 +10,7 @@ from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
 from wallpy.wallpaper import set_wallpaper
 from wallpy.notification import notificate
+from wallpy.__version__ import VERSION
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -32,7 +33,7 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 @click.option("--script", "-s", "script", is_flag=True)
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
 def main(apod, bing, file, script):
-    click.echo("Welcome to wallpy!")
+    click.echo(f"Welcome to wallpy! v{VERSION}")
 
     if file is None:
         fp = tempfile.TemporaryDirectory()
