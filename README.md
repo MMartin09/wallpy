@@ -44,3 +44,4 @@ They could by executed with a double click on it.
 
 For the code to be merged, each new code must be formatted with [black](https://black.readthedocs.io) for consistency with the rest of the code. 
 Before introducing any major features or changes to the core functionality please consider opening [an issue](https://github.com/MMartin09/wallpy/issues) to outline your proposal. 
+
