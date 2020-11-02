@@ -9,6 +9,7 @@ from urllib.error import URLError
 from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
 from wallpy.wallpaper import set_wallpaper
+from wallpy.notification import notificate
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -22,10 +23,15 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     help="Download the Astronomy Picture of the Day (APoD)",
 )
 @click.option(
-    "--bing", "-b", "bing", is_flag=True, help="Download the Bing image of the day"
+    "--bing",
+    "-b",
+    "bing",
+    is_flag=True,
+    help="Download the Bing image of the day"
 )
+@click.option("--script", "-s", "script", is_flag=True)
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
-def main(apod, bing, file):
+def main(apod, bing, file, script):
     click.echo("Welcome to wallpy!")
 
     if file is None:
@@ -53,6 +59,16 @@ def main(apod, bing, file):
     # TODO:
     #      * Maybe this changes when this is not the end of the code
     time.sleep(0.5)
+
+    if script:
+        msg: str = ""
+
+        if apod:
+            msg = "Set the new APOD from NASA as wallpaper"
+        elif bing:
+            msg = "Set the new Image of the day from Bing as wallpaper"
+
+        notificate(title="Wallpy", text=msg)
 
 
 if __name__ == "__main__":
