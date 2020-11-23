@@ -1,4 +1,4 @@
-# Wallpy
+# 🖼️ Wallpy
 
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/MMartin09/wallpy?include_prereleases)
 [![GitHub license](https://img.shields.io/github/license/MMartin09/wallpy)](https://github.com/MMartin09/wallpy/blob/development/LICENSE)
