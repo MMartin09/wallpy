@@ -1,5 +1,6 @@
 
 .idea/
-wallpy/__pycache__/
-tests/__pycache__/
 .coverage
+wallpy/__pycache__/*
+tests/__pycache__/*
+wallpy/gui/__pycache__/*

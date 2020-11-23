@@ -1,16 +1,6 @@
-import tempfile
-import os
-import sys
-import time
-
 import click
-from urllib.error import URLError
 
-from wallpy.main_window import MainWindow
-from wallpy.url_query import UrlQuery
-from wallpy.image_download import ImageDownload
-from wallpy.wallpaper import set_wallpaper
-from wallpy.notification import notificate
+from wallpy.gui.main_window import MainWindow
 from wallpy.__version__ import VERSION
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
