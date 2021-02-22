@@ -1,5 +1,7 @@
 import click
 
+from screeninfo import get_monitors
+
 from wallpy.gui.main_window import MainWindow
 from wallpy.__version__ import VERSION
 
@@ -26,6 +28,9 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 @click.option("--gui", "-g", "gui", is_flag=True)
 def main(apod, bing, file, gui, script):
     click.echo(f"Welcome to wallpy! v{VERSION}")
+
+    monitors = get_monitors()
+    print(f"Found {len(monitors)} monitor(s)")
 
     if gui is not None:
         app = MainWindow("Wallpy", "at.martinmoser.wallpy")
