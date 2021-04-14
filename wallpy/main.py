@@ -21,7 +21,7 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     "-b",
     "bing",
     is_flag=True,
-    help="Download the Bing image of the day"
+    help="Download the Bing image of the Day (BIoD)"
 )
 @click.option("--script", "-s", "script", is_flag=True)
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
