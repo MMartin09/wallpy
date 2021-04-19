@@ -12,6 +12,8 @@ from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
 from wallpy.notification import notificate
 
+from wallpy.gui.test_window import test_window
+
 
 class MainWindow(toga.App):
     """Main window for wallpy"""
@@ -20,13 +22,23 @@ class MainWindow(toga.App):
     _imageview_biod: toga.ImageView
 
     def startup(self):
-        self.main_window = toga.MainWindow(title="Test")
+        self.main_window = toga.MainWindow(title="Wallpy")
 
         self._imageview_apod = toga.ImageView()
         self._imageview_biod = toga.ImageView()
 
         self.set_apod("./images/breno-machado-in9-n0JwgZ0-unsplash.jpg")
         self.set_biod("./images/breno-machado-in9-n0JwgZ0-unsplash.jpg")
+
+        things = toga.Group('Edit')
+        cmd0 = toga.Command(
+            self.test,
+            label='Action 0',
+            tooltip='Perform action 0',
+            group=things
+        )
+
+        self.commands.add(cmd0)
 
         box_left = toga.Box(
             children=[
@@ -65,6 +77,9 @@ class MainWindow(toga.App):
 
         x = threading.Thread(target=self.thread_function, args=(file_apod, file_biod))
         x.start()
+
+    def test(self, widget):
+        test_window(widget)
 
     def thread_function(self, file_apod, file_biod):
         url_apod = UrlQuery().query("apod")
