@@ -59,42 +59,33 @@ class MainWindow(toga.App):
         split.content = [(box_left, 0.5), (box_right, 0.5)]
 
         self.main_window.content = split
-
         self.main_window.show()
 
-        fp = tempfile.TemporaryDirectory()
-        file_apod = os.path.join(fp.name, "apod.jpg")
-        file_biod = os.path.join(fp.name, "biod.jpg")
+        fp = tempfile.gettempdir()
+        file_apod = os.path.join(fp, "apod.jpg")
+        file_biod = os.path.join(fp, "biod.jpg")
 
         x = threading.Thread(target=self.thread_function, args=(file_apod, file_biod))
         x.start()
 
 
     def thread_function(self, file_apod, file_biod):
-        print("Starting thread")
-
         url_apod = UrlQuery().query("apod")
         url_biod = UrlQuery().query("bing")
 
         try:
-            f = ImageDownload().download(url_apod, file_apod)
-            #self.set_apod(file_apod)
+            ImageDownload().download(url_apod, file_apod)
+            self.set_apod(file_apod)
         except URLError:
             print("Could not download the image")
             # TODO Handle error (Maybe display temp image!)
-
-        self.set_apod(f)
 
         try:
-            f = ImageDownload().download(url_biod, file_biod)
-            #self.set_biod(file_biod)
+            ImageDownload().download(url_biod, file_biod)
+            self.set_biod(file_biod)
         except URLError:
             print("Could not download the image")
             # TODO Handle error (Maybe display temp image!)
-
-        self.set_biod(f)
-
-        print("Exiting thread")
 
     def set_apod(self, path) -> None:
         """Load the APoD and display it.
