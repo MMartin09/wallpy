@@ -1,9 +1,12 @@
+import os
+
 import click
 
 from screeninfo import get_monitors
 
-from wallpy.gui.main_window import MainWindow
 from wallpy.__version__ import VERSION
+from wallpy.gui.main_window import MainWindow
+from wallpy.gui.icon import get_icon
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -33,7 +36,7 @@ def main(apod, bing, file, gui, script):
     print(f"Found {len(monitors)} monitor(s)")
 
     if gui is not None:
-        app = MainWindow("Wallpy", "at.martinmoser.wallpy")
+        app = MainWindow("Wallpy", "at.martinmoser.wallpy", icon=get_icon())
         app.main_loop()
 
     # if file is None:
