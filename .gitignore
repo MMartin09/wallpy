@@ -3,3 +3,4 @@
 wallpy/__pycache__/
 tests/__pycache__/
 .coverage
+wallpy/gui/

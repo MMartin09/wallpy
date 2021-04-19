@@ -24,11 +24,7 @@ CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
     help="Download the Astronomy Picture of the Day (APoD)",
 )
 @click.option(
-    "--bing",
-    "-b",
-    "bing",
-    is_flag=True,
-    help="Download the Bing image of the day"
+    "--bing", "-b", "bing", is_flag=True, help="Download the Bing image of the day"
 )
 @click.option("--script", "-s", "script", is_flag=True)
 @click.option("--file", "-f", "file", help="Use the file as wallpaper")
@@ -51,7 +47,6 @@ def main(apod, bing, file, script):
         except URLError:
             click.echo("Could not download the image! The url was invalid")
             sys.exit(1)
-
 
     set_wallpaper(file)
 
