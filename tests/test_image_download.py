@@ -15,8 +15,12 @@ class TestImageDownload:
     file = os.path.join(fp.name, "wallpaper.jpg")
 
     def test_download(self):
-        self.image_download.download("https://jsonplaceholder.typicode.com/users/1/todos", self.file)
+        self.image_download.download(
+            "https://jsonplaceholder.typicode.com/users/1/todos", self.file
+        )
 
     def test_download_invalid_url(self):
         with pytest.raises(OSError):
-            self.image_download.download("https://jsonplaceholder.typicode.co", self.file)
+            self.image_download.download(
+                "https://jsonplaceholder.typicode.co", self.file
+            )
