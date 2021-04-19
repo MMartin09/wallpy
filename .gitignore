@@ -4,3 +4,4 @@
 wallpy/__pycache__/*
 tests/__pycache__/*
 wallpy/gui/__pycache__/*
+docs/_build/
