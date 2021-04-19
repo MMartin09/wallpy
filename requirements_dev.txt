@@ -5,4 +5,4 @@ wheel
 twine
 pyinstaller
 invoke
-sphinx_rtd_theme
+
