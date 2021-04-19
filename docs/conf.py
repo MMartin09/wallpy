@@ -12,7 +12,10 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../wallpy'))
+
+wallpy_pkg = os.path.abspath('../wallpy')
+
+sys.path.insert(0, wallpy_pkg)
 
 
 # -- Project information -----------------------------------------------------
@@ -35,6 +38,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.viewcode',
     'sphinx.ext.coverage',
+    'autoapi.extension',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,6 +48,8 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+
+autoapi_dirs = [wallpy_pkg]
 
 
 # -- Options for HTML output -------------------------------------------------
