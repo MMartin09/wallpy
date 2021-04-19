@@ -1,4 +1,3 @@
-
 import tempfile
 import os
 import time
@@ -11,12 +10,11 @@ from toga.style.pack import COLUMN, ROW, CENTER
 
 from wallpy.url_query import UrlQuery
 from wallpy.image_download import ImageDownload
+from wallpy.notification import notificate
 
 
 class MainWindow(toga.App):
-    """Main window for wallpy
-
-    """
+    """Main window for wallpy"""
 
     _imageview_apod: toga.ImageView
     _imageview_biod: toga.ImageView
@@ -39,7 +37,7 @@ class MainWindow(toga.App):
                 direction=COLUMN,
                 padding_bottom=10,
                 padding_left=10,
-            )
+            ),
         )
 
         box_right = toga.Box(
@@ -52,7 +50,7 @@ class MainWindow(toga.App):
                 padding_bottom=10,
                 padding_left=10,
                 padding_right=10,
-            )
+            ),
         )
 
         split = toga.SplitContainer()
@@ -67,7 +65,6 @@ class MainWindow(toga.App):
 
         x = threading.Thread(target=self.thread_function, args=(file_apod, file_biod))
         x.start()
-
 
     def thread_function(self, file_apod, file_biod):
         url_apod = UrlQuery().query("apod")
@@ -87,6 +84,8 @@ class MainWindow(toga.App):
             print("Could not download the image")
             # TODO Handle error (Maybe display temp image!)
 
+        notificate("Image download", "Successfully downloaded APoD and BIoD!")
+
     def set_apod(self, path) -> None:
         """Load the APoD and display it.
 
@@ -105,5 +104,6 @@ class MainWindow(toga.App):
             path (str): Path to the BIoD image
 
         """
+
         image = toga.Image(path)
         self._imageview_biod.image = image
