@@ -9,7 +9,7 @@ with open("requirements.txt", "r") as fp:
     REQUIREMENTS = fp.read().splitlines()
 
 setup(
-    author="Moser Martin",
+    author="MMartin09",
     author_email="mosermartin09@gmail.com",
     description="A simple wallpaper app",
     entry_points={"console_scripts": ["wallpy=wallpy.main:main"]},
